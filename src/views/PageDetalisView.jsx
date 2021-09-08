@@ -34,11 +34,11 @@ class MovieDetailsPage extends Component {
     }
     
 
-    // handleGoBack = () => {
-    //     const { location, history } = this.props;
+    handleGoBack = () => {
+        const { location, history } = this.props;
 
-    //     history.push(location?.state?.from || routes.home)
-    // }
+        history.push(location?.state?.from || routes.home)
+    }
 
     render() {
         const { poster_path, title, release_date, vote_average, overview, genres } = this.state;
@@ -47,7 +47,7 @@ class MovieDetailsPage extends Component {
         return (
             <div>
  
-                <button type='button' onClick={()=> this.props.history.push('/')} className={styles.PageDetal}>Go back</button>
+                <button type='button' onClick={this.handleGoBack} className={styles.PageDetal}>Go back</button>
                
                 
                 <img src={image} alt={title}></img>
